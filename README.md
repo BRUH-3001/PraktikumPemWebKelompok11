@@ -2,55 +2,35 @@
 File Pemrograman Web Kelas C untuk kelompok 11 - Ekonomi Sulit, Penghasilan Sempit, HIDUUPP......!!!!!!
 
 ## Anggota Kelompok
-|          Nama           |     NPM      |           Tugas                       |
-|-------------------------|--------------|---------------------------------------|
-| Muhammad Sunuy Habiby   | 140810250014 |                                       |
-| Gibraldi Zilal Fachry   | 140810250038 |                                       |
-| Azrel Sakhi Reswara     | 140810250098 |                                       |
+|          Nama           |     NPM      |
+|-------------------------|--------------|
+| Muhammad Sunuy Habiby   | 140810250014 |
+| Gibraldi Zilal Fachry   | 140810250038 |
+| Azrel Sakhi Reswara     | 140810250098 |
 
 ## Fungsi
+Website ini berfungsi sebagai platform edukasi digital yang menjembatani penyedia materi pembelajaran dengan individu yang ingin mengasah keterampilan mereka. Secara praktis, sistem ini memfasilitasi proses pencarian, pendaftaran, dan akses ke berbagai modul pembelajaran teknis maupun vokasional yang relevan dengan kebutuhan industri saat ini, sehingga pengguna dapat belajar secara mandiri dan terstruktur.
 
 ## Tujuan
+Tujuan utama dari pengembangan website ini adalah untuk mendukung pencapaian Sustainable Development Goals (SDG) target 4.4, yaitu secara signifikan meningkatkan jumlah pemuda dan orang dewasa yang memiliki keterampilan relevan. Melalui platform ini, kami bertujuan untuk mendemokratisasi akses pendidikan berbasis skill agar masyarakat dapat lebih mudah mempersiapkan diri untuk mendapatkan pekerjaan yang layak, meningkatkan jenjang karir, atau merintis wirausaha.
 
 ## Target Pengguna
+Platform ini dirancang khusus untuk menjangkau kelompok masyarakat yang membutuhkan peningkatan skill, meliputi:
 
-## Mockup
+    - Pencari Kerja & Lulusan Baru: Individu yang membutuhkan tambahan portofolio dan keterampilan teknis nyata untuk bersaing di dunia kerja.
+
+    - Pekerja Profesional: Karyawan yang ingin melakukan upskilling (meningkatkan kemampuan) atau reskilling (mempelajari keahlian baru) untuk beradaptasi dengan teknologi.
+
+    - Calon Wirausaha: Orang-orang yang membutuhkan materi praktis dan bimbingan untuk mulai membangun bisnis mereka sendiri.
 
 ## Skema Database
+Sistem ini dirancang menggunakan arsitektur database relasional (seperti MariaDB atau MySQL) dengan penerapan relasi foreign key yang jelas untuk menjaga integritas data antar entitas. Secara garis besar, skema basis datanya mencakup:
 
-## Latar Belakang
-Seiring berkembangnya teknologi, banyak pusat perbelanjaan, gedung perkantoran, dan fasilitas umum yang saat ini sudah menggunakan sistem parkir otomatis pada proses tiket masuk dan keluar kendaraan. Pengendara cukup mengambil tiket secara otomatis saat masuk dan melakukan pembayaran melalui mesin atau sistem digital tanpa pencatatan manual oleh petugas parkir. Meskipun demikian, sistem tersebut umumnya hanya membantu proses administrasi parkir, sedangkan pencarian slot parkir masih dilakukan secara manual oleh pengendara.
+    - Tabel Pengguna (Users): Menyimpan kredensial dan profil pengguna, dilengkapi dengan role untuk membedakan antara pelajar (learner) dan penyedia jasa/mentor.
 
-Pada kondisi saat ini, pengendara sering harus berkeliling area parkir untuk mencari slot yang kosong. Tidak jarang slot yang terlihat kosong dari kejauhan ternyata sudah ditempati kendaraan lain. Situasi ini menyebabkan pengendara harus terus berpindah jalur dan menghabiskan waktu lebih lama di area parkir.
+    - Tabel Materi (Courses): Menyimpan informasi detail mengenai kelas atau skill yang ditawarkan, mencakup judul, deskripsi, kategori, dan ID penyedia materi (foreign key yang merujuk ke tabel Pengguna).
 
-Inefisiensi dalam proses pencarian slot parkir juga berdampak pada antrean kendaraan di pintu masuk area parkir. Ketika kapasitas parkir mulai penuh dan kendaraan di dalam bergerak lambat untuk mencari tempat kosong, kendaraan yang baru datang akan tertahan di jalur masuk. Akibatnya, antrean kendaraan menjadi lebih panjang dan menimbulkan kemacetan, terutama pada jam sibuk seperti akhir pekan atau hari libur.
+    - Tabel Pendaftaran (Enrollments): Berfungsi sebagai tabel pivot yang menghubungkan pelajar dengan materi yang mereka ambil. Tabel ini menyimpan foreign key dari ID Pengguna dan ID Materi, sekaligus melacak status progres belajar.
 
-Berdasarkan permasalahan tersebut, kami membuat ParKING: Smart Space System for Parking Allocation, yaitu sistem parkir pintar yang dirancang untuk membantu pengguna menemukan slot parkir kosong secara lebih cepat dan efisien. Sistem ini memanfaatkan visualisasi area parkir dan algoritma pencarian slot untuk mengurangi waktu pencarian parkir, meminimalkan antrean kendaraan, serta membantu pengelola dalam memonitor kondisi parkir secara lebih modern dan terstruktur.
+    - Tabel Modul (Lessons): Menyimpan rincian sub-materi dari setiap kelas, terhubung langsung dengan ID Materi sebagai foreign key.
 
-## Tujuan dan Manfaat
-### Tujuan
-ParKING bertujuan untuk mempercepat dan menyederhanakan pengalaman parkir bagi pengemudi. Selama ini, pengemudi menghabiskan waktu dan biaya yang tidak sedikit hanya untuk menemukan slot parkir. ParKING hadir untuk menghilangkan ketidakpastian tersebut melalui sistem alokasi slot yang cerdas dan berbasis data real-time.
-### Manfaat
-- **Pengemudi:** mendapat kepastian slot sebelum tiba dan proses masuk yang lebih cepat.
-- **Pengelola parkir:** mendapat data penuh atas kapasitas real-time, alokasi slot yang efisien, dan pendapatan yang lebih teroptimasi.
-
-## Penjelasan Aplikasi
-ParKING adalah sistem manajemen parkir cerdas yang mendukung tiga mode layanan: **Reservasi**, **Walk-in**, dan **Valet**. Setiap mode diproses oleh kombinasi tiga struktur data inti yang bekerja bersama di backend.
-
-| Struktur Data | Peran dalam Sistem |
-|---|---|
-| **Priority Queue** | Menentukan slot terbaik berdasarkan skor gabungan: sisa waktu hunian, zona (premium/reguler), dan jarak ke pintu masuk |
-| **Doubly Linked List** | Manajemen status setiap slot parkir, memudahkan operasi insert dan delete data slot parkir |
-| **Graph** | Memodelkan tata letak area parkir untuk menghitung rute terpendek dari pintu masuk ke slot yang dituju |
-
-## Gambar Rancangan Antarmuka
-<img width="1366" height="600" alt="image" src="https://github.com/user-attachments/assets/4f148f71-f514-4023-abf1-733900675a1d" />
-<img width="1366" height="594" alt="image" src="https://github.com/user-attachments/assets/673ba450-57e8-4bd9-93ae-263351d7ec82" />
-<img width="1366" height="600" alt="image" src="https://github.com/user-attachments/assets/fabd8450-7190-411b-9b2c-4be21c0772ff" />
-
-## Rancangan Pengerjaan Proyek
-|          Nama           |     NPM      |           Tugas                       |
-|-------------------------|--------------|---------------------------------------|
-| Kayla Hessa Ferdinan    | 140810250023 |Doubly linked list                     |
-| Deardo Cristoph Damanik | 140810250077 |Graph                                  |
-| Azrel Sakhi Reswara     | 140810250098 |Priority queue                         |
