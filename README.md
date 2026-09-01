@@ -24,13 +24,5 @@ Platform ini dirancang khusus untuk menjangkau kelompok masyarakat yang membutuh
     - Calon Wirausaha: Orang-orang yang membutuhkan materi praktis dan bimbingan untuk mulai membangun bisnis mereka sendiri.
 
 ## Skema Database
-Sistem ini dirancang menggunakan arsitektur database relasional (seperti MariaDB atau MySQL) dengan penerapan relasi foreign key yang jelas untuk menjaga integritas data antar entitas. Secara garis besar, skema basis datanya mencakup:
-
-    - Tabel Pengguna (Users): Menyimpan kredensial dan profil pengguna, dilengkapi dengan role untuk membedakan antara pelajar (learner) dan penyedia jasa/mentor.
-
-    - Tabel Materi (Courses): Menyimpan informasi detail mengenai kelas atau skill yang ditawarkan, mencakup judul, deskripsi, kategori, dan ID penyedia materi (foreign key yang merujuk ke tabel Pengguna).
-
-    - Tabel Pendaftaran (Enrollments): Berfungsi sebagai tabel pivot yang menghubungkan pelajar dengan materi yang mereka ambil. Tabel ini menyimpan foreign key dari ID Pengguna dan ID Materi, sekaligus melacak status progres belajar.
-
-    - Tabel Modul (Lessons): Menyimpan rincian sub-materi dari setiap kelas, terhubung langsung dengan ID Materi sebagai foreign key.
+![Image](Prak_PemWeb.jpg.jpeg)
 
