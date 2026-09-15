@@ -4,7 +4,7 @@ File Pemrograman Web Kelas C untuk kelompok 11 - Ekonomi Sulit, Penghasilan Semp
 ## Anggota Kelompok
 |          Nama           |     NPM      |
 |-------------------------|--------------|
-| Muhammad Sunuy Habiby   | 140810250014 |
+| Muhammad Yunus Habiby   | 140810250014 |
 | Gibraldi Zilal Fachry   | 140810250038 |
 | Azrel Sakhi Reswara     | 140810250098 |
 
@@ -24,5 +24,5 @@ Platform ini dirancang khusus untuk menjangkau kelompok masyarakat yang membutuh
     - Calon Wirausaha: Orang-orang yang membutuhkan materi praktis dan bimbingan untuk mulai membangun bisnis mereka sendiri.
 
 ## Skema Database
-![Image](Prak_PemWeb.jpg.jpeg)
+![Image](Prak_PemWeb.jpeg)
 
