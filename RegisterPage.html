@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Daftar - SIGMA Site</title>
+    <!-- Menghubungkan file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Container utama card -->
+    <div class="card-container">
+        
+        <!-- Sisi Kiri / Atas (Biru Gelap) -->
+        <div class="left-panel">
+            <div class="left-content">
+                <h1>Portal Daftar</h1>
+                <p class="subtitle">Mulai Perjalanan Pembelajaranmu!</p>
+            </div>
+            
+            <div class="logo-box">
+                <img src="logoWeb.png" alt="Logo Website" class="logo-img">
+                <div class="logo-text">
+                    <strong>SIGMA</strong>
+                    <span>Site</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sisi Kanan / Bawah (Formulir Putih) -->
+        <div class="right-panel">
+            <form action="proses.php" method="POST">
+
+                <!-- Input Nama Lengkap -->
+                <div class="form-group">
+                    <label for="nama_lengkap">Nama Lengkap</label>
+                    <input type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama" required>
+                </div>
+
+                <!-- Input Nama Pengguna -->
+                <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan nama" required>
+                </div>
+
+                <!-- Input Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                </div>
+
+                <!-- Input Password -->
+                <div class="form-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="checkbox1" required>
+                    <label for="checkbox1">Saya setuju dengan <a href="#">Syarat dan Ketentuan Platform</a></label>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Daftar</button>
+                    <a href="login.php" class="btn btn-outline">Masuk</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
