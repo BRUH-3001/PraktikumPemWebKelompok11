@@ -1,0 +1,282 @@
+/* ==========================================================
+   SIGMA Site - Halaman Login (login.css)
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    --navy: #00244d;
+    --white: #ffffff;
+    --gray-logo: #f0f0f0;
+}
+
+/* ---------- Reset & Dasar ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--white);
+    color: #000;
+}
+
+/* ---------- Card Utama ---------- */
+.card-container {
+    display: flex;
+    width: 100%;
+    max-width: 1080px;
+    min-height: 720px;
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Panel Kiri (Biru Gelap) ---------- */
+.left-panel {
+    flex: 0 0 43%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 40px 40px 110px;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.left-content h1 {
+    font-size: 42px;
+    font-weight: 600;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+.subtitle {
+    margin-top: 22px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-img {
+    width: 126px;
+    height: 100px;
+    object-fit: contain;
+    background: var(--gray-logo);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.logo-text strong,
+.logo-text span {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+/* ---------- Panel Kanan (Formulir) ---------- */
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 12%;
+}
+
+.right-panel form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 440px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #000;
+}
+
+.form-group input {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #000;
+    background: var(--white);
+    border: 1.5px solid var(--navy);
+    border-radius: 6px;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9a9a9a;
+}
+
+.form-group input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 36, 77, 0.2);
+}
+
+/* ---------- Checkbox ---------- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border: 1.5px solid var(--navy);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background: var(--navy);
+    box-shadow: inset 0 0 0 3px var(--white);
+}
+
+.checkbox-group label {
+    flex: 1;
+    cursor: pointer;
+}
+
+/* ---------- Tombol ---------- */
+.button-group {
+    display: flex;
+    gap: 18px;
+    margin-top: auto;
+    padding-top: 40px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 49px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 3px solid var(--navy);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* ---------- Khusus halaman Login ---------- */
+/* Form turun satu slot karena hanya ada 2 field, seperti di desain */
+.right-panel form {
+    padding-top: 83px;
+}
+
+/* "Ingat Saya" di kiri, "Lupa Kata Sandi?" di kanan */
+.checkbox-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.checkbox-group label a {
+    color: #000;
+    text-decoration: none;
+}
+
+.checkbox-group label a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 800px) {
+    .card-container {
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .left-panel {
+        flex: none;
+        gap: 36px;
+        padding: 48px 24px;
+    }
+
+    .right-panel {
+        padding: 36px 8%;
+    }
+
+    .right-panel form {
+        min-height: 0;
+        padding-top: 0;
+    }
+
+    .button-group {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-content h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 19px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 19px;
+    }
+}

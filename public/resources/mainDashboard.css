@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --navy: #00244d;
+    --navy-soft: #0a2f5c;
+    --blue-mid: #4a7db7;
+    --gray-card: #eaeaea;
+    --gray-border: #8a8a8a;
+    --link: #9b9bff;
+    --white: #ffffff;
+    --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.18);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Reset & Dasar ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--white);
+    color: #000;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 22px 4%;
+    background: var(--white);
+    border-radius: 0 0 60px 60px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.logo-img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    background: #f0f0f0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.logo-text strong,
+.logo-text span {
+    font-size: 30px;
+    font-weight: 800;
+    color: #000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-links a {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: color 0.2s;
+}
+
+.nav-links a.active {
+    color: var(--navy-soft);
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--blue-mid);
+}
+
+.nav-buttons {
+    justify-self: end;
+    display: flex;
+    gap: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 22px;
+    font-weight: 600;
+    border: 3px solid var(--navy);
+    border-radius: 999px;
+    transition: transform 0.15s, opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.btn-filled {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* ---------- Hero Banner ---------- */
+.hero-banner {
+    margin-top: -60px;           /* disembunyikan sedikit di balik sudut navbar */
+    padding: 110px 4% 60px;
+    min-height: 260px;
+    background: linear-gradient(90deg, #002650 0%, #4a7db7 60%, #123a66 85%, #002650 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: clamp(28px, 3.2vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+.hero-content p {
+    margin-top: 4px;
+    font-size: clamp(16px, 1.7vw, 24px);
+    font-weight: 700;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Konten Utama ---------- */
+.content-container {
+    padding: 50px 3.5% 80px;
+}
+
+/* Judul Bagian */
+.section-title {
+    text-align: center;
+}
+
+.section-title .subtext {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+}
+
+.section-title h2 {
+    font-size: clamp(24px, 3vw, 44px);
+    font-weight: 700;
+    color: #000;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Search Bar ---------- */
+.search-container {
+    max-width: 85%;
+    margin: 50px auto 0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 58px;
+    padding: 0 76px;
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 999px;
+    box-shadow: var(--shadow-soft);
+}
+
+.search-icon {
+    font-size: 20px;
+    color: var(--navy);
+    line-height: 1;
+}
+
+.search-box input {
+    width: 200px;
+    max-width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+}
+
+.search-box input::placeholder {
+    color: #8a8a8a;
+}
+
+.search-button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-button:hover {
+    background: var(--navy-soft);
+}
+
+.btn-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* ---------- Dropdown Kategori ---------- */
+.dropdown-container {
+    position: relative;
+    z-index: 5;
+    width: min(36%, 540px);
+    min-width: 260px;
+    margin: 40px auto 0;
+}
+
+.dropdown-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 50px;
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow-soft);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Panah dibuat dengan CSS (karakter di HTML disembunyikan) */
+.arrow-icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    font-size: 0;
+    color: transparent;
+    transform: translateY(-70%) rotate(45deg);
+    border-right: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+    transition: transform 0.2s;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    box-shadow: var(--shadow-soft);
+    max-height: 190px;
+    overflow-y: auto;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 18px 26px;
+    font-size: 24px;
+    color: #000;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li.active a {
+    background: var(--navy);
+    color: var(--white);
+}
+
+/* Buka dropdown saat di-hover / difokus (tanpa JavaScript) */
+.dropdown-container:hover .dropdown-menu,
+.dropdown-container:focus-within .dropdown-menu,
+.dropdown-container.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-container:hover .arrow-icon,
+.dropdown-container:focus-within .arrow-icon,
+.dropdown-container.open .arrow-icon {
+    transform: translateY(-20%) rotate(225deg);
+}
+
+/* Saat menu terbuka, item "active" tidak ikut menyala jika ada item lain yang di-hover */
+.dropdown-menu:hover li.active:not(:hover) a {
+    background: var(--white);
+    color: #000;
+}
+
+/* ---------- Grid Kartu ---------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 60px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.card-thumbnail {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    background: var(--gray-card);
+}
+
+.card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-footer {
+    padding: 18px 10px 20px;
+    text-align: center;
+    background: var(--white);
+}
+
+.card-footer a {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.card-footer a:hover {
+    color: var(--navy);
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 1100px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .dropdown-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        justify-items: center;
+        border-radius: 0 0 36px 36px;
+    }
+
+    .nav-buttons {
+        justify-self: center;
+    }
+
+    .hero-banner {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 560px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dropdown-container {
+        width: 90%;
+    }
+
+    .btn {
+        padding: 8px 26px;
+        font-size: 18px;
+    }
+
+    .search-box input {
+        font-size: 18px;
+    }
+}
